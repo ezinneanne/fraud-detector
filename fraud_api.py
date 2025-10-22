@@ -42,6 +42,10 @@ class Transaction(BaseModel):
     V28: float
     Amount: float
 
+@app.get("/")
+def home():
+    return {"message": "Fraud API is running!"}
+
 @app.post("/predict")
 def predict(transaction: Transaction):
     # Convert to DataFrame
